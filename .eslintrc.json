@@ -1,6 +1,6 @@
 {
   "extends": [
-    // Chúng ta sẽ dùng các rule mặc định từ các plugin mà chúng ta đã cài.
+    // Set up default rules for installed packages
     "next",
     "next/core-web-vitals",
     "eslint:recommended",
@@ -9,15 +9,15 @@
     "plugin:import/recommended",
     "plugin:jsx-a11y/recommended",
     "plugin:@typescript-eslint/recommended",
-    // Disable các rule mà eslint xung đột với prettier.
-    // Để cái này ở dưới để nó override các rule phía trên!.
+    // Disable rules that conflict with prettier
+    // Below lines override rules above
     "eslint-config-prettier",
     "prettier"
   ],
   "plugins": ["prettier"],
   "settings": {
     "react": {
-      // Nói eslint-plugin-react tự động biết version của React.
+      // eslint-plugin-react detect react version
       "version": "detect"
     }
   },
@@ -25,11 +25,16 @@
     "node": true
   },
   "rules": {
-    // Tắt rule yêu cầu import React trong file jsx
+    "typescript-eslint/ban-types": "off",
+
+    "import/no-unresolved": "off",
+    // Disable rules that require imports in tsx
     "react/react-in-jsx-scope": "off",
-    // Cảnh báo khi thẻ <a target="_blank"> mà không có rel="noreferrer"
+    // Warn when a tag does not have rel='noreferrer'
     "react/jsx-no-target-blank": "warn",
-    // Tăng cường một số rule prettier (copy từ file .prettierrc qua)
+    // Disable prop-types
+    "react/prop-types": "off",
+    // Enhance some rules of prettier (copy from .prettierrc)
     "prettier/prettier": [
       "warn",
       {
@@ -39,7 +44,7 @@
         "tabWidth": 2,
         "endOfLine": "auto",
         "useTabs": false,
-        "singleQuote": true,
+        "singleQuote": false,
         "printWidth": 120,
         "jsxSingleQuote": true
       }
