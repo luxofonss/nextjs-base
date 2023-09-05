@@ -27,6 +27,8 @@
   "rules": {
     "typescript-eslint/ban-types": "off",
 
+    "@typescript-eslint/no-explicit-any": "off",
+
     "import/no-unresolved": "off",
     // Disable rules that require imports in tsx
     "react/react-in-jsx-scope": "off",

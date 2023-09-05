@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang='en'>
-      <body className={inter.className}>
+      <body style={{ pointerEvents: "all!important" }} className={inter.className}>
         <Header />
         <main className='flex w-full h-[calc(100vh-56px)]'>
           <Sider />
